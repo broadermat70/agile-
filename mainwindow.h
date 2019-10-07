@@ -23,6 +23,10 @@ private slots:
 
     void on_supportedEnvironmentsButton_clicked();
 
+    void on_pushButton_Login_clicked();
+
+    void on_pushButton_NewCustomer_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

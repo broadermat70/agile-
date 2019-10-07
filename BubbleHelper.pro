@@ -19,6 +19,7 @@ SOURCES += \
     contact.cpp \
     environments.cpp \
     guarantee.cpp \
+    loginType.cpp \
     main.cpp \
     mainwindow.cpp
 
@@ -26,6 +27,7 @@ HEADERS += \
     contact.h \
     environments.h \
     guarantee.h \
+    logintype.h \
     mainwindow.h
 
 FORMS += \
