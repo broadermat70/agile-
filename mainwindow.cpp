@@ -63,4 +63,5 @@ void MainWindow::on_pushButton_NewCustomer_clicked()
     QString password = ui->lineEdit_Password->text();
 
     backupLogin(username, password);
+    QMessageBox::information(this, "Signup", QString("You have successfully signed up\nUsername: %1\nPassword: %2").arg(username).arg(password));
 }
