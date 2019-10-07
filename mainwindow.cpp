@@ -3,6 +3,7 @@
 #include "guarantee.h"
 #include "contact.h"
 #include "environments.h"
+#include "logintype.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
