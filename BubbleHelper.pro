@@ -21,20 +21,23 @@ SOURCES += \
     guarantee.cpp \
     loginType.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    newuser.cpp
 
 HEADERS += \
     contact.h \
     environments.h \
     guarantee.h \
     logintype.h \
-    mainwindow.h
+    mainwindow.h \
+    newuser.h
 
 FORMS += \
     contact.ui \
     environments.ui \
     guarantee.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    newuser.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
