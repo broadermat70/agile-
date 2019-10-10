@@ -16,9 +16,9 @@ public:
     ~newuser();
 
 private slots:
-    void on_buttonBox_rejected();
+//    void on_buttonBox_rejected();
 
-    void on_pushButton_clicked();
+//    void on_pushButton_clicked();
 
     void on_submitUser_clicked();
 
