@@ -16,7 +16,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    cartscreen.cpp \
     contact.cpp \
+    customerscreen.cpp \
     environments.cpp \
     guarantee.cpp \
     loginType.cpp \
@@ -25,7 +27,9 @@ SOURCES += \
     newuser.cpp
 
 HEADERS += \
+    cartscreen.h \
     contact.h \
+    customerscreen.h \
     environments.h \
     guarantee.h \
     logintype.h \
@@ -33,7 +37,9 @@ HEADERS += \
     newuser.h
 
 FORMS += \
+    cartscreen.ui \
     contact.ui \
+    customerscreen.ui \
     environments.ui \
     guarantee.ui \
     mainwindow.ui \

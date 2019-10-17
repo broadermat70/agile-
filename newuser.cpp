@@ -26,15 +26,16 @@ void newuser::on_submitUser_clicked()
     QString password = ui->lineEdit_Password->text();
     QString confirmPassword = ui->lineEdit_ConfirmPassword->text();
 
-//    QString fName = ui->lineEdit_firstName->text();
-//    QString lName = ui->lineEdit_lastName->text();
-//    QString email = ui->lineEdit_customerEmail->text();
-//    QString phoneNumber = ui->lineEdit_phone->text();
-//    QString companyName = ui->lineEdit_company->text();
+    QString fName = ui->lineEdit_fName->text();
+    QString lName = ui->lineEdit_lName->text();
+    QString email = ui->lineEdit_customerEmail->text();
+    QString phoneNumber = ui->lineEdit_phone->text();
+    QString companyName = ui->lineEdit_company->text();
 
 
     if (password == confirmPassword)
     {
+
         backupLogin(username, password);
 
     } else {

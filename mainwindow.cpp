@@ -58,11 +58,16 @@ void MainWindow::on_pushButton_Login_clicked()
 
     if(loginCheck(currentLogin))
     {
-        QMessageBox::information(this, "Login", "Username and password is correct");
-    }
-    else
-    {
+
+       // QMessageBox::information(this, "Login", "Username and password is correct");
+        cust = new customerscreen(this);
+        cust->show();
+        this->hide();
+
+    } else {
+
         QMessageBox::warning(this, "Login", "Username and password is not correct");
+
     }
 }
 
@@ -79,4 +84,11 @@ void MainWindow::on_pushButton_NewCustomer_clicked()
 //    QString password = ui->lineEdit_Password->text();
 //    backupLogin(username, password);
 //    QMessageBox::information(this, "Signup", QString("You have successfully signed up\nUsername: %1\nPassword: %2").arg(username).arg(password));
+}
+
+void MainWindow::on_tempAccess_clicked()
+{
+    cust = new customerscreen(this);
+    cust->show();
+    this->hide();
 }

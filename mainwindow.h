@@ -8,6 +8,7 @@
 #include "guarantee.h"
 #include "contact.h"
 #include "environments.h"
+#include "customerscreen.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -32,11 +33,14 @@ private slots:
 
     void on_pushButton_NewCustomer_clicked();
 
+    void on_tempAccess_clicked();
+
 private:
     Ui::MainWindow *ui;
     newuser *newUser;
     guarantee *Guarantee;
     contact *Contact;
     environments *env;
+    customerscreen *cust;
 };
 #endif // MAINWINDOW_H
