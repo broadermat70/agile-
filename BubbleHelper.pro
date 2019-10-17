@@ -24,6 +24,7 @@ SOURCES += \
     loginType.cpp \
     main.cpp \
     mainwindow.cpp \
+    managesub.cpp \
     newuser.cpp
 
 HEADERS += \
@@ -34,6 +35,7 @@ HEADERS += \
     guarantee.h \
     logintype.h \
     mainwindow.h \
+    managesub.h \
     newuser.h
 
 FORMS += \
@@ -43,6 +45,7 @@ FORMS += \
     environments.ui \
     guarantee.ui \
     mainwindow.ui \
+    managesub.ui \
     newuser.ui
 
 # Default rules for deployment.

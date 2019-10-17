@@ -5,6 +5,8 @@
 #include "guarantee.h"
 #include "contact.h"
 #include "environments.h"
+#include "cartscreen.h"
+#include "managesub.h"
 
 namespace Ui {
 class customerscreen;
@@ -27,11 +29,15 @@ private slots:
 
     void on_purchaseButton_clicked();
 
+    void on_subscriptionButton_clicked();
+
 private:
     Ui::customerscreen *ui;
     guarantee *Guarantee;
     contact *Contact;
     environments *env;
+    cartscreen *cart;
+    managesub *sub;
 };
 
 #endif // CUSTOMERSCREEN_H

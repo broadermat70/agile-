@@ -1,6 +1,6 @@
 #include "customerscreen.h"
 #include "ui_customerscreen.h"
-#include "cartscreen.h"
+
 
 customerscreen::customerscreen(QWidget *parent) :
     QDialog(parent),
@@ -35,7 +35,12 @@ void customerscreen::on_contactButton_clicked()
 
 void customerscreen::on_purchaseButton_clicked()
 {
-      cartscreen cart;
-      cart.setModal(true);
-      cart.exec();
+   cart = new cartscreen(this);
+   cart->show();
+}
+
+void customerscreen::on_subscriptionButton_clicked()
+{
+    sub = new managesub(this);
+    sub->show();
 }
