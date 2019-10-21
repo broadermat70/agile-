@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>180</y>
+     <y>140</y>
      <width>141</width>
      <height>23</height>
     </rect>
@@ -26,24 +26,11 @@
     <string>Go to Purchase Screen</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="subscriptionButton">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>130</y>
-     <width>181</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Manage Current Subscription</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="guaranteeButton">
    <property name="geometry">
     <rect>
      <x>370</x>
-     <y>130</y>
+     <y>140</y>
      <width>141</width>
      <height>31</height>
     </rect>
@@ -56,7 +43,7 @@
    <property name="geometry">
     <rect>
      <x>370</x>
-     <y>180</y>
+     <y>190</y>
      <width>141</width>
      <height>31</height>
     </rect>
@@ -81,8 +68,8 @@
   <widget class="QPushButton" name="envButton">
    <property name="geometry">
     <rect>
-     <x>350</x>
-     <y>80</y>
+     <x>20</x>
+     <y>190</y>
      <width>161</width>
      <height>31</height>
     </rect>

@@ -25,7 +25,8 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     managesub.cpp \
-    newuser.cpp
+    newuser.cpp \
+    productType.cpp
 
 HEADERS += \
     cartscreen.h \
@@ -36,7 +37,8 @@ HEADERS += \
     logintype.h \
     mainwindow.h \
     managesub.h \
-    newuser.h
+    newuser.h \
+    productType.h
 
 FORMS += \
     cartscreen.ui \
