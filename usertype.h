@@ -4,30 +4,25 @@
 #include<QString>
 
 
-class userType
+class userType: public loginType
 {
 public:
     userType();
-    userType(loginType, QString, QString);
+    userType(QString, QString);
 
     QString getFName();
     QString getLName();
-    loginType getKey();
-    QString getUsername();
-    QString getPassword();
 
     void setFName(QString);
     void setLName(QString);
-    void setKey(loginType);
-    void setKey(QString, QString);
 
 private:
-   loginType key;
    QString lName;
    QString fName;
 };
 
 void backupUsers(userType);
 userType* readUsers(int&);
+bool loginCheck(loginType, int&);
 
 #endif // USERTYPE_H

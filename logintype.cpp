@@ -73,53 +73,7 @@ bool loginType::operator==(loginType C)
 }
 
 
-bool loginCheck(loginType logins)
-{
-    qDebug() << "Starting LoginCheck";
-    int count = 0;
-    loginType* allLogins = readLogin(count);
-    for(int i = 0; i < count; i++)
-    {
-        qDebug() << "Starting forloop for loginCheck";
-        qDebug() << logins.getPassword() << allLogins[i].getPassword();
-        if(logins == allLogins[i])
-        {
-            return true;
-        }
-        else if(i == count-1)
-        {
-            return false;
-        }
-    }
-   /* QString username[10];
-    QString password[10];
-    int i = 0;
 
-    QFile file("backupLogin.txt");
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-    {
-
-    }
-
-    QTextStream in(&file);
-    while (!in.atEnd() && i<10)
-    {
-        username[i] = in.readLine();
-        password[i] = in.readLine();
-        in.readLine();
-        i++;
-    }
-    for(int j = 0; j < 10; j++)
-    {
-        if(logins.getUsername() == username[j] && logins.getPassword() == password[j])
-        {
-            file.close();
-            return true;
-        }
-    }
-    file.close();
-    return false;*/
-}
 
 void loginType::setUsername(QString Username)
 {

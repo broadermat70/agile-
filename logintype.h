@@ -22,7 +22,6 @@ public:
 
 void backupLogin(QString, QString);
 void backupLogin(loginType);
-bool loginCheck(loginType);
 loginType* readLogin(int&);
 
 #endif // LOGINTYPE_H

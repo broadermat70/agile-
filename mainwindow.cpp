@@ -4,6 +4,7 @@
 //#include "contact.h"
 //#include "environments.h"
 #include "logintype.h"
+#include "usertype.h"
 #include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -55,8 +56,9 @@ void MainWindow::on_pushButton_Login_clicked()
     QString password = ui->lineEdit_Password->text();
 
     loginType currentLogin(username, password);
+    int userPosition;
 
-    if(loginCheck(currentLogin))
+    if(loginCheck(currentLogin, userPosition))
     {
 
        // QMessageBox::information(this, "Login", "Username and password is correct");

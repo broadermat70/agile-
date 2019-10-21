@@ -1,5 +1,6 @@
 #include <QMessageBox>
 #include "newuser.h"
+#include "usertype.h"
 #include "ui_newuser.h"
 #include "logintype.h"
 
@@ -89,7 +90,12 @@ void newuser::on_submitUser_clicked()
 
     if (password == confirmPassword && followsConditions)
     {
-        backupLogin(username, password);
+        //backupLogin(username, password);
+
+        userType users(fName, lName);
+        users.setUsername(username);
+        users.setPassword(password);
+        backupUsers(users);
         QMessageBox::information(this, "Signup", QString("Welcome %1 %2 to CyberSecurity!\nUsername is under %3").arg(fName).arg(lName).arg(username));
         this->close();
     }
