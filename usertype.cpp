@@ -29,6 +29,11 @@ bool userType:: getHasLoggedIn()
     return hasLoggedIn;
 }
 
+bool userType:: getIsAdmin()
+{
+    return isAdmin;
+}
+
 void userType:: setFName(QString FName)
 {
     fName = FName;
@@ -56,6 +61,22 @@ void userType:: setHasLoggedIn(bool HasLoggedIn)
     hasLoggedIn = HasLoggedIn;
 }
 
+void userType:: setIsAdmin(bool IsAdmin)
+{
+    isAdmin = IsAdmin;
+}
+
+void userType:: setIsAdmin(QString IsAdmin)
+{
+    if(IsAdmin == 1)
+    {
+        isAdmin = true;
+    }
+    else
+    {
+        isAdmin = false;
+    }}
+
 void backupUsers(userType* Users, int numUsers)
 {
     QFile file("backupUsers.txt");
@@ -71,7 +92,8 @@ void backupUsers(userType* Users, int numUsers)
             << Users[i].getPassword() << endl
             << Users[i].getFName() << endl
             << Users[i].getLName() << endl
-            << Users[i].getHasLoggedIn() << endl << endl;
+            << Users[i].getHasLoggedIn() << endl
+            << Users[i].getIsAdmin() << endl << endl;
     }
 
     file.close();
@@ -90,7 +112,8 @@ void addUserToText(userType Users)
         << Users.getPassword() << endl
         << Users.getFName() << endl
         << Users.getLName() << endl
-        << Users.getHasLoggedIn() << endl << endl;
+        << Users.getHasLoggedIn() << endl
+        << false << endl << endl;
     file.close();
 }
 
@@ -111,6 +134,7 @@ userType* readUsers(int& numUsers)
     QString first[50];
     QString last[50];
     QString hasLoggedIn[50];
+    QString isAdmin[50];
     int i = 0;
 
     QTextStream input(&file);
@@ -122,6 +146,7 @@ userType* readUsers(int& numUsers)
         first[i] = input.readLine();
         last[i] = input.readLine();
         hasLoggedIn[i] = input.readLine();
+        isAdmin[i] = input.readLine();
         input.readLine();
         numUsers++;
         i++;
@@ -134,6 +159,7 @@ userType* readUsers(int& numUsers)
         users[i].setFName(first[i]);
         users[i].setLName(last[i]);
         users[i].setHasLoggedIn(hasLoggedIn[i]);
+        users[i].setIsAdmin(isAdmin[i]);
     }
 
     return users;

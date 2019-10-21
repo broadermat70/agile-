@@ -16,6 +16,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    admintype.cpp \
+    adminwindow.cpp \
     cartscreen.cpp \
     contact.cpp \
     customerscreen.cpp \
@@ -29,6 +31,8 @@ SOURCES += \
     usertype.cpp
 
 HEADERS += \
+    admintype.h \
+    adminwindow.h \
     cartscreen.h \
     contact.h \
     customerscreen.h \
@@ -41,6 +45,8 @@ HEADERS += \
     usertype.h
 
 FORMS += \
+    admintype.ui \
+    adminwindow.ui \
     cartscreen.ui \
     contact.ui \
     customerscreen.ui \

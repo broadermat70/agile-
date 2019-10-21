@@ -13,16 +13,21 @@ public:
     QString getFName();
     QString getLName();
     bool getHasLoggedIn();
+    bool getIsAdmin();
 
     void setFName(QString);
     void setLName(QString);
     void setHasLoggedIn(bool);
     void setHasLoggedIn(QString );
+    void setIsAdmin(bool);
+    void setIsAdmin(QString);
+
 
 
 private:
    QString lName;
    QString fName;
+   bool isAdmin = false;
    bool hasLoggedIn = false;
 };
 

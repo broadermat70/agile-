@@ -59,11 +59,20 @@ void MainWindow::on_pushButton_Login_clicked()
 
     if(loginCheck(currentLogin))
     {
-
-       // QMessageBox::information(this, "Login", "Username and password is correct");
-        cust = new customerscreen(this);
-        cust->show();
-        this->hide();
+        int count = 0;
+        userType* allUsers = readUsers(count);
+        if(allUsers[findHasLoggedIn()].getIsAdmin())
+        {
+            admin = new adminwindow(this);
+            admin->show();
+            this->hide();
+        }
+        else
+        {
+            cust = new customerscreen(this);
+            cust->show();
+            this->hide();
+        }
 
     } else {
 
@@ -77,14 +86,6 @@ void MainWindow::on_pushButton_NewCustomer_clicked()
     newuser newUser;
     newUser.setModal(true);
     newUser.exec();
-
-//      this->hide();
-//      newUser = new newuser(this);
-
-//    QString username = ui->lineEdit_Username->text();
-//    QString password = ui->lineEdit_Password->text();
-//    backupLogin(username, password);
-//    QMessageBox::information(this, "Signup", QString("You have successfully signed up\nUsername: %1\nPassword: %2").arg(username).arg(password));
 }
 
 void MainWindow::on_tempAccess_clicked()

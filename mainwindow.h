@@ -9,6 +9,7 @@
 #include "contact.h"
 #include "environments.h"
 #include "customerscreen.h"
+#include "adminwindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -44,5 +45,6 @@ private:
     contact *Contact;
     environments *env;
     customerscreen *cust;
+    adminwindow *admin;
 };
 #endif // MAINWINDOW_H

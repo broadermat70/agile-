@@ -7,6 +7,7 @@
 #include "environments.h"
 #include "cartscreen.h"
 #include "managesub.h"
+#include "usertype.h"
 
 namespace Ui {
 class customerscreen;
