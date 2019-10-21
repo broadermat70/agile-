@@ -11,6 +11,13 @@ customerscreen::customerscreen(QWidget *parent) :
 
 customerscreen::~customerscreen()
 {
+    int count = 0;
+    userType* allUsers = readUsers(count);
+    for(int i = 0; i < count; i++)
+    {
+        allUsers[i].setHasLoggedIn(false);
+    }
+    backupUsers(allUsers, count);
     delete ui;
 }
 
