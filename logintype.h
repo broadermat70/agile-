@@ -15,6 +15,7 @@ public:
   QString getUsername();
   QString getPassword();
 
+  bool operator==(loginType);
   loginType();
   loginType(QString, QString);
 };
@@ -22,5 +23,6 @@ public:
 void backupLogin(QString, QString);
 void backupLogin(loginType);
 bool loginCheck(loginType);
+loginType* readLogin(int&);
 
 #endif // LOGINTYPE_H
