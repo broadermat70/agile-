@@ -1,12 +1,13 @@
 #include "logintype.h"
 #include <QFile>
 #include <QTextStream>
+#include <QDebug>
 
 
 void backupLogin(loginType User)
 {
   QFile file("backupLogin.txt");
-  if (!file.open(QIODevice::WriteOnly  | QIODevice::Text))
+  if (!file.open(QIODevice::WriteOnly  | QIODevice::Append))
   {
       return;
   }
@@ -19,47 +20,60 @@ void backupLogin(loginType User)
 
 void backupLogin(QString username, QString password)
 {
-  QFile file("backupLogin.txt");
+  QFile file("backupLogin.TXT");
   if (!file.open(QIODevice::WriteOnly  | QIODevice::Text))
   {
+      qDebug() << "Could not open File";
       return;
   }
   QTextStream out(&file);
 
   out << username << endl
-      << password << endl << endl;
+      << password << endl;
   file.close();
 }
 
-bool loginCheck(loginType logins)
+loginType* readLogin(int &count)
 {
-    QString username[10];
-    QString password[10];
-    int i = 0;
-
-    QFile file("backupLogin.txt");
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+    loginType* logins;
+    int numLogins = 0;
+    QFile file("backupLogin.TXT");
+    if(!file.open(QIODevice::ReadOnly  | QIODevice::Text))
     {
-
+        qDebug() << "Could not Read File";
+        return nullptr;
     }
-
     QTextStream in(&file);
-    while (!in.atEnd() && i<10)
+    while (!in.atEnd())
     {
-        username[i] = in.readLine();
-        password[i] = in.readLine();
-        in.readLine();
-        i++;
+        numLogins++;
     }
-    for(int j = 0; j < 10; j++)
+
+    logins = new loginType[numLogins];
+
+    count = 0;
+    QString username;
+    QString password;
+    QTextStream input(&file);
+    while(!input.atEnd())
     {
-        if(logins.getUsername() == username[j] && logins.getPassword() == password[j])
-        {
-            return true;
-        }
+        username = input.readLine();
+        password = input.readLine();
+        logins[count].setUsername(username);
+        logins[count].setPassword(password);
+        count++;
     }
-    return false;
+
+    return logins;
 }
+
+bool loginType::operator==(loginType C)
+{
+    return(C.getUsername() == username && C.getPassword() == password);
+}
+
+
+
 
 void loginType::setUsername(QString Username)
 {
