@@ -7,7 +7,7 @@
 void backupLogin(loginType User)
 {
   QFile file("backupUsers.txt");
-  if (!file.open(QIODevice::WriteOnly  | QIODevice::Text))
+  if (!file.open(QIODevice::WriteOnly  | QIODevice::Append))
   {
       return;
   }
@@ -21,7 +21,7 @@ void backupLogin(loginType User)
 void backupLogin(QString username, QString password)
 {
   QFile file("backupUsers.TXT");
-  if (!file.open(QIODevice::WriteOnly  | QIODevice::Text))
+  if (!file.open(QIODevice::WriteOnly  | QIODevice::Append))
   {
       qDebug() << "Could not open File";
       return;

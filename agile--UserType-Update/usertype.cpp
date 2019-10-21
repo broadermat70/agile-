@@ -47,7 +47,7 @@ void userType:: setisLogin(bool isLoggedin)
 void backupUsers(userType Users)
 {
     QFile file("backupUsers.txt");
-    if (!file.open(QIODevice::WriteOnly  | QIODevice::Text))
+    if (!file.open(QIODevice::WriteOnly  | QIODevice::Append))
     {
         return;
     }
@@ -56,7 +56,7 @@ void backupUsers(userType Users)
     out << Users.getUsername()<< endl
         << Users.getPassword() << endl
         << Users.getFName() << endl
-        << Users.getLName() << endl;
+        << Users.getLName() << endl << endl;
     file.close();
 }
 
