@@ -2,6 +2,7 @@
 #define USERTYPE_H
 #include "logintype.h"
 #include<QString>
+#include "productType.h"
 
 
 class userType: public loginType
@@ -21,7 +22,8 @@ public:
     void setHasLoggedIn(QString );
     void setIsAdmin(bool);
     void setIsAdmin(QString);
-
+    productType* customerProduct[50];
+    int productsPurchased;
 
 
 private:
@@ -29,6 +31,7 @@ private:
    QString fName;
    bool isAdmin = false;
    bool hasLoggedIn = false;
+
 };
 
 void addUserToText(userType);

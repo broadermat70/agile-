@@ -12,6 +12,7 @@ userType::userType(QString FName, QString LName)
 {
     fName = FName;
     lName = LName;
+    isAdmin= false;
 }
 
 QString userType:: getFName()
@@ -113,7 +114,7 @@ void addUserToText(userType Users)
         << Users.getFName() << endl
         << Users.getLName() << endl
         << Users.getHasLoggedIn() << endl
-        << false << endl << endl;
+        << Users.getIsAdmin() << endl << endl;
     file.close();
 }
 
@@ -196,6 +197,7 @@ bool loginCheck(loginType logins)
         qDebug() << allUsers[i].getUsername() << allUsers[i].getPassword();
         if(logins == allUsers[i])
         {
+            qDebug() << "setting";
             allUsers[i].setHasLoggedIn(true);
             backupUsers(allUsers, count);
             return true;
