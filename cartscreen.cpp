@@ -34,7 +34,7 @@ void cartscreen::on_basicAdd_clicked()
         {
 
             qDebug() << "Stuck?\n";
-           allUsers[i].customerProduct = new productType;
+           allUsers[i].customerProduct = new productType; //why
            allUsers[i].customerProduct->changeLevel("Basic");
            allUsers[i].customerProduct->addDays(90);
             qDebug() << "Added\n";
@@ -44,50 +44,176 @@ void cartscreen::on_basicAdd_clicked()
 
 void cartscreen::on_basicAdd_2_clicked()
 {
-//    userType users;
-//    users.customerPlan.changeLevel("Basic");
-//    users.customerPlan.addDays(180);
+    qDebug() << "Here\n";
+    int count = 0;
+
+    userType* allUsers = readUsers(count);
+    qDebug() << "Here\n" << count;
+
+    for(int i = 0; i < count; i++)
+    { qDebug() << allUsers[i].getFName() <<  allUsers[i].getIsAdmin() <<allUsers[i].getHasLoggedIn() ;
+        if(allUsers[i].getHasLoggedIn() == true)
+        {
+
+            qDebug() << "Stuck?\n";
+           allUsers[i].customerProduct = new productType; //why
+           allUsers[i].customerProduct->changeLevel("Basic");
+           allUsers[i].customerProduct->addDays(180);
+            qDebug() << "Added\n";
+        }
+    }
 }
 
 void cartscreen::on_basicAdd_3_clicked()
 {
-//    userType users;
-//    users.customerPlan.changeLevel("Basic");
-//    users.customerPlan.addDays(365);
+    qDebug() << "Here\n";
+    int count = 0;
+
+    userType* allUsers = readUsers(count);
+    qDebug() << "Here\n" << count;
+
+    for(int i = 0; i < count; i++)
+    { qDebug() << allUsers[i].getFName() <<  allUsers[i].getIsAdmin() <<allUsers[i].getHasLoggedIn() ;
+        if(allUsers[i].getHasLoggedIn() == true)
+        {
+
+            qDebug() << "Stuck?\n";
+           allUsers[i].customerProduct = new productType; //why
+           allUsers[i].customerProduct->changeLevel("Basic");
+           allUsers[i].customerProduct->addDays(365);
+            qDebug() << "Added\n";
+        }
+    }
 }
 
 void cartscreen::on_proAdd_clicked()
 {
-    //    user."productType".changeLevel("Professional");
-    //    user."productType".addDays(90);
+    qDebug() << "Here\n";
+    int count = 0;
+
+    userType* allUsers = readUsers(count);
+    qDebug() << "Here\n" << count;
+
+    for(int i = 0; i < count; i++)
+    { qDebug() << allUsers[i].getFName() <<  allUsers[i].getIsAdmin() <<allUsers[i].getHasLoggedIn() ;
+        if(allUsers[i].getHasLoggedIn() == true)
+        {
+
+            qDebug() << "Stuck?\n";
+           allUsers[i].customerProduct = new productType; //why
+           allUsers[i].customerProduct->changeLevel("Pro");
+           allUsers[i].customerProduct->addDays(90);
+            qDebug() << "Added\n";
+        }
+    }
 }
 
 void cartscreen::on_proAdd_2_clicked()
 {
-    //    user."productType".changeLevel("Professional");
-    //    user."productType".addDays(180);
+    qDebug() << "Here\n";
+    int count = 0;
+
+    userType* allUsers = readUsers(count);
+    qDebug() << "Here\n" << count;
+
+    for(int i = 0; i < count; i++)
+    { qDebug() << allUsers[i].getFName() <<  allUsers[i].getIsAdmin() <<allUsers[i].getHasLoggedIn() ;
+        if(allUsers[i].getHasLoggedIn() == true)
+        {
+
+            qDebug() << "Stuck?\n";
+           allUsers[i].customerProduct = new productType; //why
+           allUsers[i].customerProduct->changeLevel("Pro");
+           allUsers[i].customerProduct->addDays(180);
+            qDebug() << "Added\n";
+        }
+    }
 }
 
 void cartscreen::on_proAdd_3_clicked()
 {
-    //    user."productType".changeLevel("Professional");
-    //    user."productType".addDays(365);
+    qDebug() << "Here\n";
+    int count = 0;
+
+    userType* allUsers = readUsers(count);
+    qDebug() << "Here\n" << count;
+
+    for(int i = 0; i < count; i++)
+    { qDebug() << allUsers[i].getFName() <<  allUsers[i].getIsAdmin() <<allUsers[i].getHasLoggedIn() ;
+        if(allUsers[i].getHasLoggedIn() == true)
+        {
+
+            qDebug() << "Stuck?\n";
+           allUsers[i].customerProduct = new productType; //why
+           allUsers[i].customerProduct->changeLevel("Pro");
+           allUsers[i].customerProduct->addDays(365);
+            qDebug() << "Added\n";
+        }
+    }
 }
 
 void cartscreen::on_premiiumAdd_clicked()
 {
-    //    user."productType".changeLevel("Premium");
-    //    user."productType".addDays(90);
+    qDebug() << "Here\n";
+    int count = 0;
+
+    userType* allUsers = readUsers(count);
+    qDebug() << "Here\n" << count;
+
+    for(int i = 0; i < count; i++)
+    { qDebug() << allUsers[i].getFName() <<  allUsers[i].getIsAdmin() <<allUsers[i].getHasLoggedIn() ;
+        if(allUsers[i].getHasLoggedIn() == true)
+        {
+
+            qDebug() << "Stuck?\n";
+           allUsers[i].customerProduct = new productType; //why
+           allUsers[i].customerProduct->changeLevel("Premium");
+           allUsers[i].customerProduct->addDays(90);
+            qDebug() << "Added\n";
+        }
+    }
 }
 
 void cartscreen::on_premiiumAdd_2_clicked()
 {
-    //    user."productType".changeLevel("Premium");
-    //    user."productType".addDays(180);
+    qDebug() << "Here\n";
+    int count = 0;
+
+    userType* allUsers = readUsers(count);
+    qDebug() << "Here\n" << count;
+
+    for(int i = 0; i < count; i++)
+    { qDebug() << allUsers[i].getFName() <<  allUsers[i].getIsAdmin() <<allUsers[i].getHasLoggedIn() ;
+        if(allUsers[i].getHasLoggedIn() == true)
+        {
+
+            qDebug() << "Stuck?\n";
+           allUsers[i].customerProduct = new productType; //why
+           allUsers[i].customerProduct->changeLevel("Premium");
+           allUsers[i].customerProduct->addDays(180);
+            qDebug() << "Added\n";
+        }
+    }
 }
 
 void cartscreen::on_premiiumAdd_3_clicked()
 {
-    //    user."productType".changeLevel("Premium");
-    //    user."productType".addDays(365);
+    qDebug() << "Here\n";
+    int count = 0;
+
+    userType* allUsers = readUsers(count);
+    qDebug() << "Here\n" << count;
+
+    for(int i = 0; i < count; i++)
+    { qDebug() << allUsers[i].getFName() <<  allUsers[i].getIsAdmin() <<allUsers[i].getHasLoggedIn() ;
+        if(allUsers[i].getHasLoggedIn() == true)
+        {
+
+            qDebug() << "Stuck?\n";
+           allUsers[i].customerProduct = new productType; //why
+           allUsers[i].customerProduct->changeLevel("Premium");
+           allUsers[i].customerProduct->addDays(365);
+            qDebug() << "Added\n";
+        }
+    }
 }
