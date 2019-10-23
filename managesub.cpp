@@ -7,10 +7,23 @@ managesub::managesub(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    int dayInt = 0; //*INSERT DAYS LEFT GETTER*;
+    int count = 0;
+    int dayInt = 0;
+    QString subString;
+
+    userType* allUsers = readUsers(count);
+
+    for(int i = 0; i < count; i++)
+    { qDebug() << allUsers[i].getFName() <<  allUsers[i].getIsAdmin() <<allUsers[i].getHasLoggedIn() ;
+        if(allUsers[i].getHasLoggedIn() == true)
+        {
+            dayInt = allUsers[i].customerProduct->getDaysLeft();
+            subString = allUsers[i].customerProduct->getLevel();
+        }
+    }
     QString dayString = QString::number(dayInt);
 
-    ui->displayLevel->setText("*INSERT TEXT GETTER HERE*");
+    ui->displayLevel->setText(subString);
     ui->displayDays->setText(dayString);
 
 }

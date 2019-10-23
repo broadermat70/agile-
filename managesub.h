@@ -1,6 +1,7 @@
 #ifndef MANAGESUB_H
 #define MANAGESUB_H
-
+#include "usertype.h"
+#include <QDebug>
 #include <QDialog>
 #include <QString>
 namespace Ui {
