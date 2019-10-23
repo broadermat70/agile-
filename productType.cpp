@@ -8,24 +8,43 @@ productType::productType()
     subscriptionDaysLeft = 0;
 }
 
+productType::productType(const productType &obj)
+{
+    productLevel = obj.getLevel();
+    subscriptionDaysLeft = obj.getDaysLeft();
+}
 
-
-QString productType::getLevel()
+QString productType::getLevel() const
 {
     return productLevel;
 }
 
-int productType::getDaysLeft()
+int productType::getDaysLeft() const
 {
     return subscriptionDaysLeft;
 }
 
 void productType::changeLevel(QString lev)
 {
-//    if (lev == "Basic" || "Pro" || "Premium")
-//    {
+    if (lev == "Basic")
+    {
         productLevel = lev;
-//    }
+    } else {
+        if (lev == "Pro")
+        {
+            productLevel = lev;
+        } else {
+               if (lev == "Premium")
+               {
+                   productLevel = lev;
+               }
+         }
+     }
+}
+
+void productType::changeDays(int days)
+{
+    subscriptionDaysLeft = days;
 }
 
 void productType::addDays(int days)

@@ -5,32 +5,42 @@
 
 userType::userType()
 {
-
+    isAdmin = false;
+    hasLoggedIn = false;
 }
 
 userType::userType(QString FName, QString LName)
 {
     fName = FName;
     lName = LName;
-    isAdmin= false;
+    isAdmin = false;
+    hasLoggedIn = false;
 }
 
-QString userType:: getFName()
+userType::userType(const userType &obj)
+{
+    fName = obj.getFName();
+    lName = obj.getLName();
+    isAdmin = obj.getIsAdmin();
+    hasLoggedIn = obj.getHasLoggedIn();
+}
+
+QString userType:: getFName() const
 {
     return fName;
 }
 
-QString userType:: getLName()
+QString userType:: getLName() const
 {
     return lName;
 }
 
-bool userType:: getHasLoggedIn()
+bool userType:: getHasLoggedIn() const
 {
     return hasLoggedIn;
 }
 
-bool userType:: getIsAdmin()
+bool userType:: getIsAdmin() const
 {
     return isAdmin;
 }
@@ -47,7 +57,7 @@ void userType:: setLName(QString LName)
 
 void userType:: setHasLoggedIn(QString HasLoggedIn)
 {
-    if(HasLoggedIn == 1)
+    if(HasLoggedIn == "1")
     {
         hasLoggedIn = true;
     }
@@ -69,7 +79,7 @@ void userType:: setIsAdmin(bool IsAdmin)
 
 void userType:: setIsAdmin(QString IsAdmin)
 {
-    if(IsAdmin == 1)
+    if(IsAdmin == "1")
     {
         isAdmin = true;
     }
