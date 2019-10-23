@@ -34,9 +34,9 @@ void cartscreen::on_basicAdd_clicked()
         {
 
             qDebug() << "Stuck?\n";
-           allUsers[i].customerProduct[allUsers[i].productsPurchased] = new productType;
-           allUsers[i].customerProduct[allUsers[i].productsPurchased]->changeLevel("Basic");
-           allUsers[i].customerProduct[allUsers[i].productsPurchased]->addDays(90);
+           allUsers[i].customerProduct = new productType;
+           allUsers[i].customerProduct->changeLevel("Basic");
+           allUsers[i].customerProduct->addDays(90);
             qDebug() << "Added\n";
         }
     }

@@ -22,8 +22,7 @@ public:
     void setHasLoggedIn(QString );
     void setIsAdmin(bool);
     void setIsAdmin(QString);
-    productType* customerProduct[50];
-    int productsPurchased;
+    productType* customerProduct;
 
 
 private:
