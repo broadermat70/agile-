@@ -7,6 +7,7 @@ userType::userType()
 {
     isAdmin = false;
     hasLoggedIn = false;
+    customerProduct = nullptr;
 }
 
 userType::userType(QString FName, QString LName)
@@ -15,6 +16,9 @@ userType::userType(QString FName, QString LName)
     lName = LName;
     isAdmin = false;
     hasLoggedIn = false;
+    customerProduct = new productType();
+    customerProduct->changeLevel("NONE");
+    customerProduct->changeDays(0);
 }
 
 userType::userType(const userType &obj)
@@ -23,6 +27,9 @@ userType::userType(const userType &obj)
     lName = obj.getLName();
     isAdmin = obj.getIsAdmin();
     hasLoggedIn = obj.getHasLoggedIn();
+    customerProduct = new productType();
+    customerProduct->changeLevel(obj.customerProduct->getLevel());
+    customerProduct->changeDays(obj.customerProduct->getDaysLeft());
 }
 
 QString userType:: getFName() const
@@ -104,7 +111,9 @@ void backupUsers(userType* Users, int numUsers)
             << Users[i].getFName() << endl
             << Users[i].getLName() << endl
             << Users[i].getHasLoggedIn() << endl
-            << Users[i].getIsAdmin() << endl << endl;
+            << Users[i].getIsAdmin() << endl
+            << Users[i].customerProduct->getLevel() << endl
+            << Users[i].customerProduct->getDaysLeft() << endl << endl;
     }
 
     file.close();
@@ -124,7 +133,9 @@ void addUserToText(userType Users)
         << Users.getFName() << endl
         << Users.getLName() << endl
         << Users.getHasLoggedIn() << endl
-        << Users.getIsAdmin() << endl << endl;
+        << Users.getIsAdmin() << endl
+        << Users.customerProduct->getLevel() << endl
+        << Users.customerProduct->getDaysLeft() << endl << endl;
     file.close();
 }
 
@@ -146,6 +157,8 @@ userType* readUsers(int& numUsers)
     QString last[50];
     QString hasLoggedIn[50];
     QString isAdmin[50];
+    QString productLevel[50];
+    QString daysLeft[50];
     int i = 0;
 
     QTextStream input(&file);
@@ -158,6 +171,8 @@ userType* readUsers(int& numUsers)
         last[i] = input.readLine();
         hasLoggedIn[i] = input.readLine();
         isAdmin[i] = input.readLine();
+        productLevel[i] = input.readLine();
+        daysLeft[i] = input.readLine();
         input.readLine();
         numUsers++;
         i++;
@@ -171,6 +186,9 @@ userType* readUsers(int& numUsers)
         users[i].setLName(last[i]);
         users[i].setHasLoggedIn(hasLoggedIn[i]);
         users[i].setIsAdmin(isAdmin[i]);
+        users[i].customerProduct->changeLevel(productLevel[i]);
+        int dayLeft = daysLeft[i].toInt();
+        users[i].customerProduct->changeDays(dayLeft);
     }
 
     return users;
