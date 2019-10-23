@@ -6,18 +6,16 @@ customerscreen::customerscreen(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::customerscreen)
 {
+    int numUsers = 0;
+    userType* allUsers = readUsers(numUsers);
+
     ui->setupUi(this);
+    ui->loggedInUser->setText(ui->loggedInUser->text()+allUsers[findHasLoggedIn()].getFName()+" "+allUsers[findHasLoggedIn()].getLName());
 }
 
 customerscreen::~customerscreen()
 {
-    int count = 0;
-    userType* allUsers = readUsers(count);
-    for(int i = 0; i < count; i++)
-    {
-        allUsers[i].setHasLoggedIn(false);
-    }
-    backupUsers(allUsers, count);
+    resetCurrentLogin();
     delete ui;
 }
 

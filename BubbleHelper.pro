@@ -28,6 +28,7 @@ SOURCES += \
     mainwindow.cpp \
     managesub.cpp \
     newuser.cpp \
+    productType.cpp \
     usertype.cpp
 
 HEADERS += \
@@ -42,6 +43,7 @@ HEADERS += \
     mainwindow.h \
     managesub.h \
     newuser.h \
+    productType.h \
     usertype.h
 
 FORMS += \

@@ -8,6 +8,7 @@
 #include "cartscreen.h"
 #include "managesub.h"
 #include "usertype.h"
+#include "qDebug"
 
 namespace Ui {
 class customerscreen;

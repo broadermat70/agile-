@@ -5,13 +5,18 @@
 
 userType::userType()
 {
-
+    fName = "unknown";
+    lName = "unknown";
+    isAdmin = false;
+    hasLoggedIn = false;
 }
 
 userType::userType(QString FName, QString LName)
 {
     fName = FName;
     lName = LName;
+    isAdmin = false;
+    hasLoggedIn = false;
 }
 
 QString userType:: getFName()
@@ -46,7 +51,7 @@ void userType:: setLName(QString LName)
 
 void userType:: setHasLoggedIn(QString HasLoggedIn)
 {
-    if(HasLoggedIn == 1)
+    if(HasLoggedIn == "1")
     {
         hasLoggedIn = true;
     }
@@ -68,7 +73,7 @@ void userType:: setIsAdmin(bool IsAdmin)
 
 void userType:: setIsAdmin(QString IsAdmin)
 {
-    if(IsAdmin == 1)
+    if(IsAdmin == "1")
     {
         isAdmin = true;
     }
@@ -113,7 +118,7 @@ void addUserToText(userType Users)
         << Users.getFName() << endl
         << Users.getLName() << endl
         << Users.getHasLoggedIn() << endl
-        << false << endl << endl;
+        << Users.getIsAdmin() << endl << endl;
     file.close();
 }
 
@@ -140,7 +145,6 @@ userType* readUsers(int& numUsers)
     QTextStream input(&file);
     while(!input.atEnd())
     {
-        qDebug() << "Inside While";
         username[i] = input.readLine();
         password[i] = input.readLine();
         first[i] = input.readLine();
@@ -192,7 +196,6 @@ bool loginCheck(loginType logins)
 
     for(int i = 0; i < count; i++)
     {
-        qDebug() << "Starting forloop for loginCheck";
         qDebug() << allUsers[i].getUsername() << allUsers[i].getPassword();
         if(logins == allUsers[i])
         {
@@ -206,4 +209,95 @@ bool loginCheck(loginType logins)
         }
     }
     return false;
+}
+
+void resetCurrentLogin()
+{
+    int count = 0;
+    userType* allUsers = readUsers(count);
+    for(int i = 0; i < count; i++)
+    {
+        allUsers[i].setHasLoggedIn(false);
+    }
+    backupUsers(allUsers, count);
+}
+
+QString stringCut(QString input, int width)
+{
+    QString final = "";
+    for(int i = 0; i < width; i++)
+    {
+        if(i < input.length())
+        {
+           final += input[i];
+        }
+        else
+        {
+            final += " ";
+        }
+    }
+    final += "    ";
+    return final;
+}
+
+int findLargestString()
+{
+    int numUsers = 0;
+    userType* allUsers = readUsers(numUsers);
+    int maxLength = 0;
+    for(int i = 0; i < numUsers; i++)
+    {
+        if(allUsers[i].getFName().length() > maxLength)
+        {maxLength = allUsers[i].getFName().length();}
+        if(allUsers[i].getLName().length() > maxLength)
+        {maxLength = allUsers[i].getLName().length();}
+        if(allUsers[i].getUsername().length() > maxLength)
+        {maxLength = allUsers[i].getUsername().length();}
+        if(allUsers[i].getPassword().length() > maxLength)
+        {maxLength = allUsers[i].getPassword().length();}
+        qDebug() << "Max set to " << maxLength;
+    }
+    return maxLength;
+}
+
+userType* sortfName()
+{
+    int numUsers = 0;
+    userType* allUsers = readUsers(numUsers);
+    userType tempUsers;
+
+    for(int i = 0; i < numUsers; i++)
+    {
+        for(int j = i; j < numUsers; j++)
+        {
+            if(allUsers[i].getFName()[0] > allUsers[j].getFName()[0])
+            {
+                tempUsers = allUsers[j];
+                allUsers[j] = allUsers[i];
+                allUsers[i] = tempUsers;
+            }
+        }
+    }
+    return allUsers;
+}
+
+userType* sortlName()
+{
+    int numUsers = 0;
+    userType* allUsers = readUsers(numUsers);
+    userType tempUsers;
+
+    for(int i = 0; i < numUsers; i++)
+    {
+        for(int j = i; j < numUsers; j++)
+        {
+            if(allUsers[i].getLName()[0] > allUsers[j].getLName()[0])
+            {
+                tempUsers = allUsers[j];
+                allUsers[j] = allUsers[i];
+                allUsers[i] = tempUsers;
+            }
+        }
+    }
+    return allUsers;
 }
